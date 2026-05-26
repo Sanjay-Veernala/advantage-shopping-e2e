@@ -1,0 +1,23 @@
+{
+  "name": "advantage-shopping-e2e",
+  "version": "1.0.0",
+  "description": "Playwright + TypeScript E2E framework for Advantage Online Shopping (POM)",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:auth": "playwright test tests/auth",
+    "test:shopping": "playwright test tests/shopping",
+    "report": "playwright show-report",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": ["playwright", "e2e", "pom", "advantage-shopping"],
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "dotenv": "^17.2.3",
+    "typescript": "^5.9.3"
+  }
+}
