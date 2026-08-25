@@ -2,6 +2,9 @@ node_modules/
 dist/
 /test-results/
 /playwright-report/
+/allure-results/
+/allure-report/
+/.playwright-mcp/
 /blob-report/
 /playwright/.cache/
 .env
