@@ -1,10 +1,11 @@
-import { test as base } from '@playwright/test';
-import { HomePage } from '../pages/home.page';
-import { LoginPage } from '../pages/login.page';
-import { RegistrationPage } from '../pages/registration.page';
-import { ProductPage } from '../pages/product.page';
-import { CartPage } from '../pages/cart.page';
-import { buildNewUser, type NewUser } from '../utils/data-generator';
+import { test as base } from "@playwright/test";
+import { HomePage } from "../pages/home.page";
+import { LoginPage } from "../pages/login.page";
+import { RegistrationPage } from "../pages/registration.page";
+import { ProductPage } from "../pages/product.page";
+import { CartPage } from "../pages/cart.page";
+import { CheckoutPage } from "../pages/checkout.page";
+import { buildNewUser, type NewUser } from "../utils/data-generator";
 
 type PageFixtures = {
   homePage: HomePage;
@@ -12,6 +13,7 @@ type PageFixtures = {
   registrationPage: RegistrationPage;
   productPage: ProductPage;
   cartPage: CartPage;
+  checkoutPage: CheckoutPage;
   newUser: NewUser;
 };
 
@@ -31,9 +33,12 @@ export const test = base.extend<PageFixtures>({
   cartPage: async ({ page }, use) => {
     await use(new CartPage(page));
   },
+  checkoutPage: async ({ page }, use) => {
+    await use(new CheckoutPage(page));
+  },
   newUser: async ({}, use) => {
     await use(buildNewUser());
   },
 });
 
-export { expect } from '@playwright/test';
+export { expect } from "@playwright/test";
