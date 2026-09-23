@@ -11,12 +11,21 @@
     "test:auth": "playwright test tests/auth",
     "test:shopping": "playwright test tests/shopping",
     "report": "playwright show-report",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
   },
-  "keywords": ["playwright", "e2e", "pom", "advantage-shopping"],
+  "keywords": [
+    "playwright",
+    "e2e",
+    "pom",
+    "advantage-shopping"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.58.2",
+    "@types/node": "^26.2.0",
+    "allure-playwright": "^3.10.2",
     "dotenv": "^17.2.3",
     "typescript": "^5.9.3"
   }

@@ -1,4 +1,4 @@
-import { Locator, Page, expect } from '@playwright/test';
+import { Locator, Page, expect } from "@playwright/test";
 
 /** Login mini-panel in the header (username / password / sign in). */
 export class LoginPanelComponent {
@@ -12,8 +12,10 @@ export class LoginPanelComponent {
     this.page = page;
     this.usernameInput = page.locator('input[name="username"]');
     this.passwordInput = page.locator('input[name="password"]');
-    this.signInButton = page.locator('#sign_in_btn');
-    this.createAccountLink = page.locator('[data-ng-click="createNewAccount()"]');
+    this.signInButton = page.locator("#sign_in_btn");
+    this.createAccountLink = page.locator(
+      '[data-ng-click="createNewAccount()"]',
+    );
   }
 
   async signIn(username: string, password: string): Promise<void> {
